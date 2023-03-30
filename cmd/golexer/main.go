@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/dropdevrahul/golexer/golexer"
+	"github.com/dropdevrahul/golexer"
 )
 
 func main() {
