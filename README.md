@@ -15,6 +15,12 @@ make build
 
 ```
 
+You can also pipe stuff into the program
+
+```
+echo "some text" | ./target/golexer 
+```
+
 
 ### Example
 
@@ -28,7 +34,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/dropdevrahul/golexer/golexer"
+	"github.com/dropdevrahul/golexer"
 )
 
 func main() {

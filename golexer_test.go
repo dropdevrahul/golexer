@@ -1,6 +1,7 @@
 package golexer_test
 
 import (
+	"os"
 	"testing"
 
 	"github.com/dropdevrahul/golexer"
@@ -8,9 +9,14 @@ import (
 )
 
 func TestLexFile(t *testing.T) {
-	tz := golexer.NewTokenizer()
+	tz := golexer.NewTokenizer(golexer.DefaultSeperators)
 
-	tokens, err := tz.LexFile("test-data/sample.txt")
+	input, err := os.Open("test-data/sample.txt")
+	if err != nil {
+		panic(err)
+	}
+
+	tokens, err := tz.Lex(input)
 	assert.Equal(t, err, nil)
 	assert.Equal(t, 11, len(tokens))
 }
